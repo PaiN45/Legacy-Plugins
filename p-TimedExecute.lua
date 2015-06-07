@@ -14,6 +14,7 @@ function PLUGIN:LoadDefaultConfig()
 {"save.all",300},
 {"say 'hello world'",5},
 }
+self:SaveConfig()
 end
  
 function PLUGIN:OnServerInitialized()
