@@ -31,7 +31,7 @@ namespace Oxide.Plugins
 		SaveConfig();
 		}
 		
-		void CanClientLogin(ClientConnection connection, uLink.NetworkPlayerApproval approval)
+		uLink.NetworkConnectionError CanClientLogin(ClientConnection connection, uLink.NetworkPlayerApproval approval)
 		{		
 			List<string> allowedips = Config["AllowedIPs"] as List<string>;
 			foreach(string allowedip in allowedips)
@@ -39,7 +39,7 @@ namespace Oxide.Plugins
 				var ip = approval.ipAddress;
 				if (ip != allowedip)
 				{
-					return;
+					return uLink.NetworkConnectionError;
 				}
 			}
 		}
