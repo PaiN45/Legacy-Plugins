@@ -39,7 +39,7 @@ namespace Oxide.Plugins
 				var ip = approval.ipAddress;
 				if (ip != allowedip)
 				{
-					return uLink.NetworkConnectionError;
+					return;
 				}
 			}
 		}
